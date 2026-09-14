@@ -41,17 +41,20 @@ export function DeleteAccountClient() {
     const deleteAccount =
         useReverification(
             async () => {
-                return await fetch(
-                    "/api/delete-account",
-                    {
-                        method: "POST",
+                const response =
+                    await fetch(
+                        "/api/delete-account",
+                        {
+                            method: "POST",
 
-                        headers: {
-                            "Content-Type":
-                                "application/json",
-                        },
-                    }
-                );
+                            headers: {
+                                "Content-Type":
+                                    "application/json",
+                            },
+                        }
+                    );
+
+                return await response.json();
             }
         );
 
@@ -70,20 +73,18 @@ export function DeleteAccountClient() {
 
 
         try {
-            const response =
+            const data =
                 await deleteAccount();
 
 
-            if (!response) {
+            if (!data) {
                 return;
             }
 
 
-            const data =
-                await response.json();
-
-
-            if (!response.ok) {
+            if (
+                data.ok !== true
+            ) {
                 throw new Error(
                     typeof data?.error ===
                         "string"
@@ -94,7 +95,6 @@ export function DeleteAccountClient() {
 
 
             if (
-                data.ok === true &&
                 data.status ===
                 "account_deleted"
             ) {
