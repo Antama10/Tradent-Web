@@ -358,7 +358,7 @@ a:hover {
 
   font-weight: 700;
 }
-  .delete-danger-box {
+.delete-danger-box {
   margin-top: 24px;
   padding: 20px;
 
@@ -427,5 +427,72 @@ a:hover {
   color: #ff8f8f !important;
 
   font-weight: 700;
+}
+.delete-data-list {
+  margin:
+    16px 0
+    22px;
+
+  padding-left: 22px;
+
+  color: #9fb0c4;
+
+  line-height: 1.7;
+}
+
+.delete-data-list li + li {
+  margin-top: 6px;
+}
+
+.subscription-warning,
+.subscription-note {
+  margin-top: 20px;
+  padding: 16px;
+
+  border:
+    1px solid
+    #644b24;
+
+  border-radius: 12px;
+
+  background: #17140e;
+}
+
+.subscription-warning strong,
+.subscription-note strong {
+  color: #ffffff;
+}
+
+.subscription-warning p,
+.subscription-note p {
+  margin-bottom: 0;
+}
+
+.delete-success-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 18px;
+
+  border-radius: 50%;
+
+  background: #17351f;
+  color: #7bdc91;
+
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.account-link-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 22px;
 }
 }
